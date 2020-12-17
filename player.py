@@ -1,5 +1,6 @@
 import room
 
+
 class Player:
 
     def __init__(self, location=None, items={}, NPC=False, n=None):
