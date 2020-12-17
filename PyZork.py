@@ -1,19 +1,13 @@
+
 import player, room, time, random
 
 try:
-    startScreen = input("PyZork v1.3\nHit enter to start\n")
+    startScreen = input("PyZork v1.2\nHit enter to start\n")
 except:
     print("Your version of python is not compatible with this program, please use Python 3 or up")
     end = raw_input("Hit enter to quit")
     quit()
-
-try:
-    readSave = open('save.pzk', 'r')
-    readSave.close()
-except:
-    createSave = open('save.pzk', 'w')
-    createSave.close()
-
+    
 class Game:
 
     def __init__(self):    
