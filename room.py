@@ -1,5 +1,6 @@
 class Room:
 
+    
     def __init__(self, n="", d="", l=False, iden = 000, save = False):
         """
         constructor: create a new Room object
