@@ -26,7 +26,3 @@ class Handler:
         process given command
         Turns command into list of arguments and sends to the library
         """
-
-if __name__ == '__main__':
-    g = Game()
-    g.start()

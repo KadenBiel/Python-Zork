@@ -21,6 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Library\game.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Handling\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\Items\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +34,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\Rooms\lib.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Save\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\__init__.py">
@@ -43,6 +52,8 @@
   <ItemGroup>
     <Folder Include="Library\Items\" />
     <Folder Include="Library\" />
+    <Folder Include="Library\Handling\" />
+    <Folder Include="Library\Save\" />
     <Folder Include="Library\Rooms\" />
     <Folder Include="Library\NPC\" />
     <Folder Include="Library\Player\" />
