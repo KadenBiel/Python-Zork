@@ -5,10 +5,10 @@ class roomLib():
         self.id = 2
         self.desc = "Object for maintaining and interacting with rooms on the map"
         tree = lib.mod
-        self.player = tree[1].playLib
-        self.items = tree[3].itemLib
-        self.npc = tree[4].npcLib
-        self.save = tree[5].saveLib
+        self.player = tree[1]
+        self.items = tree[3]
+        self.npc = tree[4]
+        self.save = tree[5]
         self.ver = lib.ver
 
     def createRoom(self, name, desc, lit, item):

@@ -18,5 +18,12 @@ print("Game status: ready")
 
 class lib():
     def __init__(self):
-        self.mod = [game, Player, Rooms, Items, NPC, Save, Handling]
+        self.mod = [game.Game, Player.playLib, Rooms.roomLib, Items.itemLib, NPC.npcLib, Save.Saver, Handling.Handler]
         self.ver = "v1.3"
+        self.currentMap = None
+
+    def send(self, c):
+        self.mod[6].IN(c)
+
+    def getSaves(self):
+        return self.mod[6].saves

@@ -1,8 +1,4 @@
-from Library import Items as it
-from Library import Rooms as ro
-from Library import Player as pl
-from Library import NPC as np
-from Library import * as lib
+from Library import lib as game
 
 try:
     """
@@ -14,15 +10,33 @@ except:
     end = raw_input("Hit enter to quit")
     quit()
 
-class Handler:
+class Game:
 
     def __init__(self):    
         """
-        Creates a Handler object to talk to the Library
+        Creates a Game object to talk to the Library
         """
+        self.cmd = [] #list of previous commands a player has entered and the response given
+        self.maxCMD = 5 #var for the max number of previous commands shown
 
-    def process_cmd(self, c):
+    def gameState(self):
         """
-        process given command
-        Turns command into list of arguments and sends to the library
+        Talks with the library and shows information to the player
         """
+        usrIn = input(game.getSaves())
+        cmd = game.initData()
+        while True:
+            #Functioning game loop
+            rCMD = self.cmd.reverse()
+            x = 0
+            for i in rCMD:
+                #prints previous commands and responses
+                x += 1
+                print(i)
+                if x == maxCMD:
+                    break
+
+            usrIn = input("\n> ")
+            resp = game.send(usrIn)
+            print(resp)
+            self.cmd.append("\n> "+usrIn+"\n"+resp)

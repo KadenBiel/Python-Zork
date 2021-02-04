@@ -47,10 +47,15 @@
     <Folder Include="Library\Items\" />
     <Folder Include="Library\" />
     <Folder Include="Library\Handling\" />
+    <Folder Include="Library\Save\gameSaves\" />
     <Folder Include="Library\Save\" />
     <Folder Include="Library\Rooms\" />
     <Folder Include="Library\NPC\" />
     <Folder Include="Library\Player\" />
+    <Folder Include="Library\Save\maps\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\Save\gameSaves\saveData.pzk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
