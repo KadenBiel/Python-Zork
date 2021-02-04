@@ -1,8 +1,11 @@
-class NPC(object):
+from Library import lib
+
+class npcLib(object):
     """NPC object class"""
-    def __init__(self, *args, **kwargs):
-        self.name = *args[0]
-        self.desc = *args[1]
-        self.loc = **kwargs[0]
-        self.playerID = **kwargs[1]
-        return self.name + " - Finish init"
+    def __init__(self):
+        tree = lib.mod
+        self.rooms = tree[2]
+        self.items = tree[3]
+        self.npc = tree[4]
+        self.save = tree[5]
+        self.ver = lib.ver
