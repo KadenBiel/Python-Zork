@@ -30,12 +30,6 @@
     <Compile Include="Library\Items\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Rooms\listed.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Library\Rooms\lib.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Library\Save\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -57,9 +51,6 @@
     <Folder Include="Library\Rooms\" />
     <Folder Include="Library\NPC\" />
     <Folder Include="Library\Player\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Library\Rooms\Rooms.list" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

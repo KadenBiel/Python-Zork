@@ -1,4 +1,3 @@
-
 print("Inititializing object classes")
 if Items.listed == None:
     print("Items: null")
@@ -19,5 +18,5 @@ print("Game status: ready")
 
 class lib():
     def __init__(self):
-        self.mod = [Rooms.lib.id, NPC.lib.id, Items.lib.id, Player.lib.id]
-        
+        self.mod = [game, Player, Rooms, Items, NPC, Save, Handling]
+        self.ver = "v1.3"
