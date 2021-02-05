@@ -1,19 +1,19 @@
 import Library
-class Game():
+
+class Game:
 
     def __init__(self):    
         """
         Initializes game state
         """
-        tree = Library.lib.mod
         self.validMoves = ['north', 'n', 'south', 's', 'east', 'e', 'west', 'w', 'northeast', 'ne', 'northwest', 'nw', 'southeast', 'se', 'southwest', 'sw', 'up', 'u', 'down', 'd']
-        self.id = 0
-        self.player = tree[1]
-        self.rooms = tree[2]
-        self.items = tree[3]
-        self.npc = tree[4]
-        self.save = tree[5]
-        self.ver = Library.lib.ver
+        self.libs = Library.lib()
+        self.Game = self.libs.gameS
+        self.Player = self.libs.player
+        self.Room = self.libs.room
+        self.Items = self.libs.items
+        self.NPC = self.libs.npc
+        self.Save = self.libs.save
 
     def cmd(self, c):
         c1 = c[0]

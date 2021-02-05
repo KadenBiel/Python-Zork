@@ -1,15 +1,8 @@
-import Library
-class roomLib():
+class roomLib:
     def __init__(self):
         self.rList = []
         self.id = 2
         self.desc = "Object for maintaining and interacting with rooms on the map"
-        tree = Library.lib.mod
-        self.player = tree[1]
-        self.items = tree[3]
-        self.npc = tree[4]
-        self.save = tree[5]
-        self.ver = Library.lib.ver
 
     def createRoom(self, name, desc, lit, item):
         iden = self.rList.len()

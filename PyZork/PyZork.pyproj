@@ -24,9 +24,6 @@
     <Compile Include="Library\game.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Handling.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Library\Items.py">
       <SubType>Code</SubType>
     </Compile>
@@ -36,7 +33,7 @@
     <Compile Include="Library\maps.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Save.py">
+    <Compile Include="Library\Saving.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\__init__.py">
