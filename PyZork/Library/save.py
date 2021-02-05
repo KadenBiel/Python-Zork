@@ -1,5 +1,4 @@
-from Library import lib
-import os
+import os, Library
 
 class Saver(object):
     """
@@ -7,13 +6,13 @@ class Saver(object):
     Stores and opens maps
     """
     def __init__(self):
-        tree = lib.mod
+        tree = Library.lib.mod
         self.saves = []
         self.player = tree[1]
         self.room = tree[2]
         self.item = tree[3]
         self.npc = tree[4]
-        self.ver = lib.ver
+        self.ver = Library.lib.ver
 
         dat = open("/gameSaves/saveData.pzk", 'r')
         for line in dat:
@@ -41,7 +40,7 @@ class Saver(object):
             nSave.write(i)
         nSave.close()
         if id == self.saves.len():
-            saves.append(n)
+            self.saves.append(n)
         return "Saved"
     
     def delSave(self, id):

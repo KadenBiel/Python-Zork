@@ -24,38 +24,38 @@
     <Compile Include="Library\game.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Handling\__init__.py">
+    <Compile Include="Library\Handling.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Items\__init__.py">
+    <Compile Include="Library\Items.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Save\__init__.py">
+    <Compile Include="Library\maps\ZorkI.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\maps.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Library\Save.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Library\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\NPC\__init__.py">
+    <Compile Include="Library\NPC.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Library\Player\__init__.py" />
-    <Compile Include="Library\Rooms\__init__.py" />
+    <Compile Include="Library\Player.py" />
+    <Compile Include="Library\Rooms.py" />
     <Compile Include="__main__.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Library\Items\" />
     <Folder Include="Library\" />
-    <Folder Include="Library\Handling\" />
-    <Folder Include="Library\Save\gameSaves\" />
-    <Folder Include="Library\Save\" />
-    <Folder Include="Library\Rooms\" />
-    <Folder Include="Library\NPC\" />
-    <Folder Include="Library\Player\" />
-    <Folder Include="Library\Save\maps\" />
+    <Folder Include="Library\gameSaves\" />
+    <Folder Include="Library\maps\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Library\Save\gameSaves\saveData.pzk" />
+    <Content Include="Library\gameSaves\saveData.pzk" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

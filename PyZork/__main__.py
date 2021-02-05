@@ -1,4 +1,4 @@
-from Library import lib as game
+import Library
 
 try:
     """
@@ -18,13 +18,12 @@ class Game:
         """
         self.cmd = [] #list of previous commands a player has entered and the response given
         self.maxCMD = 5 #var for the max number of previous commands shown
+        self.gameState = Library.lib()
 
-    def gameState(self):
+    def start(self):
         """
         Talks with the library and shows information to the player
         """
-        usrIn = input(game.getSaves())
-        cmd = game.initData()
         while True:
             #Functioning game loop
             rCMD = self.cmd.reverse()
@@ -40,3 +39,7 @@ class Game:
             resp = game.send(usrIn)
             print(resp)
             self.cmd.append("\n> "+usrIn+"\n"+resp)
+
+if __name__ == "__main__":
+    g = Game()
+    g.start()

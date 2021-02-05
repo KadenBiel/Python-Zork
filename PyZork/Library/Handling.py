@@ -1,4 +1,4 @@
-from Library import lib
+import Library
 
 class Handler(object):
     """
@@ -8,14 +8,9 @@ class Handler(object):
         self.name = "Handle"
         self.desc = "Main Input and Output handler for PyZork library"
         self.id = 6
-        tree = lib.mod
+        tree = Library.lib.mod
         self.game = tree[0]
-        self.player = tree[1]
-        self.rooms = tree[2]
-        self.items = tree[3]
-        self.npc = tree[4]
-        self.save = tree[5]
-        self.ver = lib.ver
+        self.ver = Library.lib.ver
 
     def IN(self, cmd):
         """
