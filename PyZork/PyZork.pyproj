@@ -27,6 +27,9 @@
     <Compile Include="Library\game.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Library\gameSaves\0.pzk">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Library\Items.py">
       <SubType>Code</SubType>
     </Compile>
