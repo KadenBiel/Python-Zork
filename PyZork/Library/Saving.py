@@ -5,25 +5,12 @@ class saver:
     Creates, stores and opens game saves
     Stores and opens maps
     """
-    def __init__(self):
-        self.libs = Library.lib()
-        self.Game = self.libs.gameS
-        self.Player = self.libs.player
-        self.Room = self.libs.room
-        self.Items = self.libs.items
-        self.NPC = self.libs.npc
-        self.Save = self.libs.save
-
-        dat = open("Library/gameSaves/saveData.pzk", 'r')
-        for line in dat:
-            sLen = int(line)
-            break
-        if sLen > 0:
-            for i in range(len(self.saves)):
-                nS = open("Library/gameSaves/save"+str(i)+".pzk", 'r')
-                for line in nS:
-                    items.append(line)
-                    break
+    def __init__(self, p, r, i, n):
+        self.player = p
+        self.room = r
+        self.item = i
+        self.npc = n
+        self.saves = os.listdir('Library/gameSaves')
 
     def save(self, n, id=None):
         if id == none:
@@ -38,10 +25,10 @@ class saver:
         attributes = [n, player, rooms, items, npcs, map]
         print("Writing Save")
         for i in attributes:
-            nSave.write(i)
+            nSave.write(str(i)+'\n')
         nSave.close()
         if id == len(self.saves):
-            self.saves.append(n)
+            self.saves.append(str(id)+'.pzk')
         return "Saved"
     
     def delSave(self, id):

@@ -18,13 +18,14 @@ class Game:
         """
         self.cmd = [] #list of previous commands a player has entered and the response given
         self.maxCMD = 5 #var for the max number of previous commands shown
+        self.init = Library.mapLib()
         self.gameState = Library.lib()
+        
 
     def start(self):
         """
         Talks with the library and shows information to the player
         """
-        self.gameState.initData()
         while True:
             #Functioning game loop
             rCMD = self.cmd.reverse()

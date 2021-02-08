@@ -1,19 +1,15 @@
-import Library
-
 class Game:
 
-    def __init__(self):    
+    def __init__(self, p, r, i, n, s):    
         """
         Initializes game state
         """
         self.validMoves = ['north', 'n', 'south', 's', 'east', 'e', 'west', 'w', 'northeast', 'ne', 'northwest', 'nw', 'southeast', 'se', 'southwest', 'sw', 'up', 'u', 'down', 'd']
-        self.libs = Library.lib()
-        self.Game = self.libs.gameS
-        self.Player = self.libs.player
-        self.Room = self.libs.room
-        self.Items = self.libs.items
-        self.NPC = self.libs.npc
-        self.Save = self.libs.save
+        self.player = p
+        self.room = r
+        self.items = i
+        self.npc = n
+        self.save = s
 
     def cmd(self, c):
         c1 = c[0]

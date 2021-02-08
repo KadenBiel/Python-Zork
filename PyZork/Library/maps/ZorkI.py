@@ -1,14 +1,10 @@
-import Library
-
 class map:
-    def __init__(self):
-        libs = Library.lib()
-        self.Game = libs.gameS
-        self.Player = libs.player
-        self.Room = libs.room
-        self.Items = libs.items
-        self.NPC = libs.npc
-        self.Save = libs.save
+    def __init__(self, p=None, r=None, i=None, n=None):
+        self.player = p
+        self.room = r
+        self.items = i
+        self.npc = n
+        self.name = "Zork I"
 
     def makeRooms(self):
         """
