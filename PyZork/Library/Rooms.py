@@ -5,17 +5,16 @@ class roomLib:
         """
         self.rList = []
 
-    def create(self, name, desc, lit, item):
+    def create(self, name, desc, lit=True):
         """
         create a new room, returns the created room object
         param:
             name: string, name of the room
             desc: string, description of the room,
             lit: boolean, defines if the room is already lit or needs a light source to be seen
-            item: list of item objects in the room
         """
         iden = len(self.rList)
-        newRoom = room(n=name, id=iden, d=desc, l=lit, i=item)
+        newRoom = room(n=name, id=iden, d=desc, l=lit)
         self.rList.append(newRoom)
         return newRoom
 
@@ -111,11 +110,7 @@ class room(object):
         param: item is a dictionary with
             name / description pairs
         """
-        i = ' You see: '
-        for k, v in item.items():
-            i += k+', '
-        self.desc += i
-        self.items.update(item)
+        self.items.append(item)
 
     def add_door(self, name, d, od, room, op=False, h=False):
         """
@@ -126,7 +121,7 @@ class room(object):
             od: string, direction back to the room of origin ('n', 'e', 's', 'w', 'u' or 'd')
             room: object, the other room connected to the door
             op: boolean, defines if the door is already opened (defaults to false)
-            h: boolean, defines is the door is hidden or not
+            h: boolean, defines is the door is hidden or not (defaults to false)
         """
         newDoor = door(name, d, od, self, room, op, h)
         self.door.append(newDoor)
