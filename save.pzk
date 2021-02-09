@@ -1,0 +1,5 @@
+ $Player$ Kaden *@* 003 ^* sword *:* A sharp long elvish sword, sack *:*  *&* lunch *:* Nothing special here*,* garlic *:* Nothing special here*,*  *&*  *^ 1000
+ $ROOM$ 001 *@*  ^* mailbox *:*  *&*  *&*  *^  %* 010 : n, 002 : s, 030 : w,  *% 
+ $ROOM$ 100 *@*  ^*  *^  %* 010 : n, 002 : s, 500 : e, 020 : w,  *% 
+ $ROOM$ 020 *@*  ^*  *^  %* 200 : u, 003 : w, 100 : e,  *% 
+ $ROOM$ 003 *@*  ^*  *^  %* 020 : e, 070 : d,  *% 

@@ -13,9 +13,9 @@ class saver:
         self.saves = os.listdir('Library/gameSaves')
 
     def save(self, n, id=None):
-        if id == none:
+        if id == None:
             id = len(self.saves)
-        nSave = open("Library/gameSaves/save"+id+".pzk", 'w')
+        nSave = open("Library/gameSaves/"+str(id)+".pzk", 'w')
         player = self.player.getAttributes()
         rooms = self.room.getSave()
         items = self.item.getSave()
