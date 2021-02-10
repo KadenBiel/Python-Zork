@@ -5,29 +5,36 @@ class playLib(object):
 
 class Player:
 
-    def __init__(self, location=None, items={}, n=None):
+    def __init__(self, location=None, items=[], right=None, left=None, n=None):
         """
         new Player constructor
-            location and items are OPTIONAL parameters
-            The values in the param list are DEFAULT values
+        params:
+            location: object, the starting room object of the player
+            items: list, list of the item objects the player starts with
+            right: object, item object the player starts out holding in their right hand (dominant)
+            left: object, item object the player starts out holding in their left hand (non-dominant)
+            n: string, name of the player (input by the user)
         """
-        self.location = location #defines starting laction for the player
-        self.items = items #defines staring items for the player
-        self.health = 100 #defines starting health for player
-        self.com = NPC #defines if player object is an NPC or not
-        self.name = n #defines player name
-        self.death = False #boolean to check if object is dead
+        self.location = location #If location is None, the player will start in a random room
+        self.items = items
+        self.health = 100 #Players hp
+        self.name = n
+        self.death = False #boolean for if the player dies
+        self.right = right
+        self.left = left
 
     def go(self, direction):
         """
         go in a direction
+        params:
+            direction: string, direction the player wants to move ('n', 'e', 's', 'w', 'u' or 'd')
         """
-        room = self.location #defines room you are in
-        direct = list(room.doors) #gets the list of directions you can move
+        room = self.location
+        direct = list(room.doors)
         if direction in direct:
-            self.location = room.doors[direction] #puts player object in room if they can move there
+            self.location = room.doors[direction]
             if self.com == True:
-                self.location.play.append(room.play.pop(self)) #if player object is and NPC this will upadte the room list or NPC's
+                self.location.play.append(room.play.pop(self))
             return True
         else:
             return False
@@ -35,26 +42,29 @@ class Player:
     def look(self, item=None):
         """
         look around, or look at an item
+        params:
+            item: string, name of the item
         """
-        room = self.location #gets room you are in
+        room = self.location
         if item != None:
             try:
-                return(item+room.items[item]) #gets item description and item name then returns it to the processer
+                return item+room.items[item]
             except:
-                return 'item "'+item+'" not found' #returns item name if item wasnt in the room
+                return 'item "'+item+'" not found'
         else:
-            return room.print_details() #returns the rooms description if items were not listed
+            return room.print_details()
 
     def take(self, item):
         """
         take an item
+        param:
+            item: string, name of the item
         """
         if len(self.items) == 8:
-            #Stop code if you've maxed out on items
-            return
+            return None
         if item in self.location.items:
             #Takes item out of the room dictionary and places it in the player's dictionary
-            self.items.update({item:self.location.items.pop(item)})
+            self.items.append(self.location.items.pop(item))
         for k, v in self.location.items.items():
             #checks if item is in a container and pulls it out
             if type(v) == type(dict()):
@@ -69,31 +79,47 @@ class Player:
         """
         #takes item out of player dictionary and places it in the room
         if item in self.items:
-            d = self.items[item] #gets item description
-            self.items.pop(item) #removes item from player
-            self.location.items.update({item:d}) #places item  in room
+            d = self.items[item]
+            self.items.pop(item)
+            self.location.items.update({item:d})
+
+    def in_hand(self, item, rl):
+        """
+        place an item in the player's hand
+        params:
+            item: object, the object to place in hand
+            rl: string, right or left hand ('r', 'l')
+        """
+        if rl == 'r':
+            self.right = item
+        elif rl == 'l':
+            self.left = item
+        else:
+            return 'Invalid hand'
 
     def kill(self, npc, dam):
         """
         lose health
+        param:
+            npc: object, npc player is fighting
+            dam: interger, damage the player dealt
         """
         if dam > 0:
-            npc.health -= dam #subtracts health from player you are fighting and vice versa (NPC's are a bit glitchy right now and cannot be implemented just yet)
+            npc.health -= dam
             if npc.health <= 0:
-                npc.dead() #"kills" the npc or player
+                npc.dead()
                 return 'Killed'
             return 'Hit'
         else:
             return 'Missed'
+
     def dead(self):
         """
         die
         """
-        self.death = True #updates death boolean
+        self.death = True
         rem = self.items
         for x, y in rem.items():
-            self.location.items.update({x:self.items[x]}) #removes items and places them in the room
+            self.location.items.update({x:self.items[x]})
         self.items = {}
-        if self.com:
-            self.location.play.remove(self)
 
