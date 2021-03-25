@@ -100,15 +100,15 @@ class room(object):
         """
         if other.id in self.openDoors:
             return None
-        self.doors.update({direction:other}) #Adds room to dictionary or surrounding rooms
+        self.connection.update({direction:other}) #Adds room to dictionary or surrounding rooms
         connect = {other:direction} #Creates a dictionary contianing the connecting room and the direction
         self.openDoors.append(connect) #Adds the connection dictionary to the list or connections
 
     def add_items(self, item):
         """
         add items to the room
-        param: item is a dictionary with
-            name / description pairs
+        param:
+            item: object, the item object
         """
         self.items.append(item)
 

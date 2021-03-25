@@ -18,11 +18,10 @@ class saver:
         nSave = open("Library/gameSaves/"+str(id)+".pzk", 'w')
         player = self.player.getAttributes()
         rooms = self.room.getSave()
-        items = self.item.getSave()
         npcs = self.npc.getSave()
         map = self.libs.map
         print("Archiving Attributes")
-        attributes = [n, player, rooms, items, npcs, map]
+        attributes = [n, player, rooms, npcs, map]
         print("Writing Save")
         for i in attributes:
             nSave.write(str(i)+'\n')

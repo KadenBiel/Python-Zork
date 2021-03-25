@@ -13,7 +13,7 @@ class Game:
         self.sID = None
 
     def combat(self, npc):
-        print('You have been attacked by ' + npc.name + ' type "kill ' + npc.name + '" to fight back.')
+        print('You have been attacked by ' + npc.name + ' type "kill ' + npc.name + ' with <object>" to fight back.')
         while True:
             c = input('> ')
             if 'kill' in c and npc.name in c:
